@@ -5,19 +5,21 @@ const crypto = require('crypto');
 
 router.post('/', async (req, res) => {
     try {
-        const userFond = await User.find(req.body);
-        console.log("Requête reçue :", userFond);
+        // const userFond = await User.find(req.body);
+        // console.log("Requête reçue :", userFond);
 
         // const service = new Service(req.body);
         // await service.save();
-        if(!userFond){
-            res.status(400).json({ message: "Utilisateur introuvable" });
-        } else if (userFond){
-            // res.status(201).json("lala");
-            // Génération du token
-            const token = jwt.sign({ id: user._id, role: user.role }, "SECRET_KEY", { expiresIn: "1h" });
-            res.json({ token });
-        }
+        // if(!userFond){
+        //     res.status(400).json({ message: "Utilisateur introuvable" });
+        // } else if (userFond){
+        //     // res.status(201).json("lala");
+        //     // Génération du token
+        //     const token = jwt.sign({ id: user._id, role: user.role }, "SECRET_KEY", { expiresIn: "1h" });
+        //     res.json({ token });
+        // }
+            res.status(200).json("Welcome");
+
 
     } catch (error) {
         res.status(400).json({ message: error.message });
